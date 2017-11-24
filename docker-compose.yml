@@ -1,0 +1,13 @@
+---
+version: '3'
+services:
+    frontend:
+        image: nginx:1.12.1-mc
+        ports:
+            - "8080:80"
+    backend:
+        image: nginx:1.12.1-mc-backend
+        ports:
+            - "8081:80"
+        volumes:
+            - ./backend/content:/usr/share/nginx/html
